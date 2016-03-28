@@ -1,4 +1,4 @@
-organization := "dwango.co.jp"
+organization := "jp.co.dwango"
 
 name := "S99"
 
