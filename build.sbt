@@ -2,7 +2,7 @@ organization := "jp.co.dwango"
 
 name := "S99"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 val unusedWarnings = (
   "-Ywarn-unused" ::
