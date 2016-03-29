@@ -4,6 +4,8 @@ name := "S99"
 
 scalaVersion := "2.11.8"
 
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % "test"
+
 val unusedWarnings = (
   "-Ywarn-unused" ::
   "-Ywarn-unused-import" ::
