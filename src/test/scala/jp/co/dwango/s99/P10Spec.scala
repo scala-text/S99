@@ -5,9 +5,9 @@ import org.scalatest.{DiagrammedAssertions, FunSpec}
 class P10Spec extends FunSpec with DiagrammedAssertions {
   describe("P10") {
     it("for empty list, encode(s) is s"){
-      assert(P10.encode(List.empty[Int]) == List.empty[(Int, List[Int])])
+      assert(P10.encode(List.empty[Int]) == List.empty[(Int, Int)])
     }
-    it("for list has one element, pack(s) is List((1, s))"){
+    it("for list has one element, encode(s) is List((1, s))"){
       assert(P10.encode(List(2)) == List((1, 2)))
     }
     it("otherwise"){
