@@ -5,6 +5,7 @@ import org.scalacheck.Properties
 
 class P08Check extends Properties("P08") {
   def duplicates(list: List[Int]): Int = {
+    @scala.annotation.tailrec
     def loop(list: List[Int], curr: Int, count: Int): Int = list match {
       case Nil => count
       case x::xs =>
