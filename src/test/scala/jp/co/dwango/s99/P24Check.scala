@@ -1,9 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalacheck.{Arbitrary, Gen, Prop, Properties}
+import org.scalacheck.{Gen, Prop, Properties}
 
 class P24Check extends Properties("P24") {
-  property("randomSelect()") = {
+  property("lotto()") = {
     val gen = for {
       m <- Gen.choose(0, 100)
       n <- Gen.choose(0, m - 1)
