@@ -1,11 +1,17 @@
 package jp.co.dwango.s99
 
-import org.scalacheck.{Gen, Properties}
-import Gen.listOf, Gen.chooseNum
-import org.scalacheck.Prop.{BooleanOperators, forAll}
+import org.scalacheck.{Arbitrary, Gen, Prop, Properties}
 
 class P03Check extends Properties("P03") {
-  property("nth()") = forAll(listOf(chooseNum(Int.MinValue, Int.MaxValue)), chooseNum(-1, 10)){ (s: List[Int], i: Int) =>
-    (0 <= i && i < s.length) ==> (P03.nth(i, s) == s(i))
+  property("nth()") = {
+    val gen = for {
+      x <- Gen.choose(1, 10)
+      y <- Gen.choose(0, x - 1)
+      s <- Gen.listOfN(x, implicitly[Arbitrary[Int]].arbitrary)
+    } yield (s, y)
+
+    Prop.forAll(gen){ case (s, i) =>
+      P03.nth(i, s) == s(i)
+    }
   }
 }
