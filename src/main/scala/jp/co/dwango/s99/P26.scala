@@ -15,7 +15,7 @@ object P26 {
         map(groupInto(n - 1, k, xs)){a => (a._1, x::a._2)})
     case _ => sys.error("")
   }
-  def combinations[T](k: Int, list: List[T]): List[List[T]] = {
-    map(groupInto(length(list), k, list))(_._1)
+  def combinations[T:Ordering](k: Int, list: List[T]): List[List[T]] = {
+    map(groupInto(length(list), k, list))(_._1).map(_.sorted).distinct
   }
 }
