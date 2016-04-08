@@ -5,7 +5,7 @@ import org.scalacheck.{Prop, Properties, Gen, Arbitrary}
 class P27aCheck extends Properties("P27a") {
   property("group3()") = {
     val gen = for {
-      g <- Gen.listOfN(9, implicitly[Arbitrary[Int]].arbitrary)
+      g <- Gen.listOfN(9, Gen.choose(Int.MinValue, Int.MaxValue))
       if g.distinct.length == g.length
     } yield g
     Prop.forAll(gen){ (s: List[Int]) =>
