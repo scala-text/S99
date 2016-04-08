@@ -1,6 +1,6 @@
 package jp.co.dwango.s99
 
-import org.scalacheck.{Prop, Gen, Arbitrary, Properties}
+import org.scalacheck.{Prop, Properties}
 
 class P28bCheck extends Properties("P28b") {
   property("lsortFreq()") = {
