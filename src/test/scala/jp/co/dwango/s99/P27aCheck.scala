@@ -1,6 +1,6 @@
 package jp.co.dwango.s99
 
-import org.scalacheck.{Prop, Properties, Gen, Arbitrary}
+import org.scalacheck.{Prop, Properties, Gen}
 
 class P27aCheck extends Properties("P27a") {
   property("group3()") = {
