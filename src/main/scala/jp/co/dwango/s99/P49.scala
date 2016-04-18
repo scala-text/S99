@@ -13,4 +13,14 @@ object P49 {
       resultL ::: resultR
     }
   }
+
+  def gray2(n: Int): List[String] = {
+    val len = Math.pow(2, n).toInt
+    val buffer = mutable.ListBuffer[String]()
+    for(i <- 0 until len) {
+      val g = Integer.toBinaryString(i ^ (i >> 1))
+      buffer.append(("0" * (n - g.length)) + g)
+    }
+    buffer.toList
+  }
 }
