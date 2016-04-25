@@ -17,6 +17,7 @@ class P32Spec extends FunSpec with DiagrammedAssertions {
     it("for negative integer numbers") {
       assert(P32.gcd(-5, -5) == 5)
       assert(P32.gcd(-2, -4) == 2)
+      assert(P32.gcd(Int.MinValue, Int.MinValue) == Int.MinValue)
     }
   }
 }
