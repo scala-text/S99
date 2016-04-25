@@ -2,9 +2,6 @@ package jp.co.dwango.s99
 
 import org.scalatest.{DiagrammedAssertions, FunSpec}
 
-/**
-  * Created by micchon1 on 2016/04/26.
-  */
 class P32Spec extends FunSpec with DiagrammedAssertions {
   describe("P32") {
     it("for zero test") {

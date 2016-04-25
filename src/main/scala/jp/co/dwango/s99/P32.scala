@@ -1,8 +1,5 @@
 package jp.co.dwango.s99
 
-/**
-  * Created by 3tty0n on 2016/04/26.
-  */
 object P32 {
   def gcd(x: Int, y: Int) : Int = {
     def loop(x: Int, y: Int): Int = {
