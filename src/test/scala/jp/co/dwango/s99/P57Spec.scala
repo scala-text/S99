@@ -1,6 +1,5 @@
 package jp.co.dwango.s99
 
-import jp.co.dwango.s99.P49.{gray, gray2}
 import jp.co.dwango.s99.P57.Tree
 import jp.co.dwango.s99.P56._
 import org.scalatest.{DiagrammedAssertions, FunSpec}
