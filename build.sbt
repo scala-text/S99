@@ -28,5 +28,5 @@ scalacOptions ++= (
 ) ::: unusedWarnings
 
 Seq(Compile, Test).flatMap(c =>
-  scalacOptions in (c, console) ~= {_.filterNot(unusedWarnings.toSet)}
+  scalacOptions in (c, console) --= unusedWarnings
 )
