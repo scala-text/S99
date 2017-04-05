@@ -8,7 +8,7 @@ script:
 - sbt ++$TRAVIS_SCALA_VERSION test
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 scala:
-- 2.11.9
+- 2.11.8
 matrix:
   include:
   - scala: 2.12.1
