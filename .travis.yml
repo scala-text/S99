@@ -8,10 +8,10 @@ script:
 - sbt ++$TRAVIS_SCALA_VERSION test
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 scala:
-- 2.11.8
+- 2.11.11
 matrix:
   include:
-  - scala: 2.12.1
+  - scala: 2.12.2
     jdk: oraclejdk8
 notifications:
   slack:
