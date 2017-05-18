@@ -4,6 +4,6 @@ import Util.flatMap
 
 object P14 {
   def duplicate[T](list: List[T]): List[T] = {
-    flatMap(list){ case x => List(x, x) }
+    flatMap(list) { case x => List(x, x) }
   }
 }

@@ -11,12 +11,13 @@ class P21Check extends Properties("P21") {
       s <- Gen.listOfN(x, implicitly[Arbitrary[Int]].arbitrary)
     } yield (s, y, e)
 
-    Prop.forAll(gen){ case (s, i, e) =>
-      P21.insertAt(e, i, s) == {
-        val buf = s.toBuffer
-        buf.insert(i, e)
-        buf.toList
-      }
+    Prop.forAll(gen) {
+      case (s, i, e) =>
+        P21.insertAt(e, i, s) == {
+          val buf = s.toBuffer
+          buf.insert(i, e)
+          buf.toList
+        }
     }
   }
 }

@@ -9,9 +9,10 @@ class P24Check extends Properties("P24") {
       n <- Gen.choose(0, m - 1)
     } yield (n, m)
 
-    Prop.forAll(gen){ case (n, m) =>
-      val lotto = P24.lotto(n, m)
-      lotto.distinct == lotto
+    Prop.forAll(gen) {
+      case (n, m) =>
+        val lotto = P24.lotto(n, m)
+        lotto.distinct == lotto
     }
   }
 }

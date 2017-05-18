@@ -9,12 +9,12 @@ object P19 {
       case n if n > 0 =>
         rest match {
           case Nil => rotate_+-(n, Nil, reverse(visit))
-          case x::xs => rotate_+-(n - 1, x::visit, xs)
+          case x :: xs => rotate_+-(n - 1, x :: visit, xs)
         }
       case n if n < 0 =>
         visit match {
           case Nil => rotate_+-(n, reverse(rest), Nil)
-          case x::xs => rotate_+-(n + 1, xs, x::rest)
+          case x :: xs => rotate_+-(n + 1, xs, x :: rest)
         }
       case 0 => append(rest, reverse(visit))
     }

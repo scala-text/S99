@@ -7,11 +7,14 @@ class P22Check extends Properties("P22") {
     val gen = for {
       from <- implicitly[Arbitrary[Int]].arbitrary
       toByLong = from + 100L //to avoid overflow
-      to <- Gen.choose(from, if(toByLong > Int.MaxValue) Int.MaxValue else from + 100)
+      to <- Gen.choose(
+        from,
+        if (toByLong > Int.MaxValue) Int.MaxValue else from + 100)
     } yield (from, to)
 
-    Prop.forAll(gen){ case (from, to) =>
-      P22.range(from, to) == (from to to).toList
+    Prop.forAll(gen) {
+      case (from, to) =>
+        P22.range(from, to) == (from to to).toList
     }
   }
 }

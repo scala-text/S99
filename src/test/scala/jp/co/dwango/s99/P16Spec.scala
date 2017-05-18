@@ -8,22 +8,22 @@ class P16Spec extends FunSpec with DiagrammedAssertions {
       intercept[Throwable] {
         P16.drop(0, List.empty[Int])
       }
-      intercept[Throwable]{
+      intercept[Throwable] {
         P16.drop(-1, List.empty[Int])
       }
-      intercept[Throwable]{
+      intercept[Throwable] {
         P16.drop(0, List(1))
       }
-      intercept[Throwable]{
+      intercept[Throwable] {
         P16.drop(-1, List(1))
       }
     }
-    it("for positive index and empty list, drop(i, s) is empty list"){
+    it("for positive index and empty list, drop(i, s) is empty list") {
       assert(P16.drop(1, List.empty[Int]) == List.empty[Int])
       assert(P16.drop(2, List.empty[Int]) == List.empty[Int])
       assert(P16.drop(3, List.empty[Int]) == List.empty[Int])
     }
-    it("otherwise"){
+    it("otherwise") {
       assert(P16.drop(1, List(1)) == List.empty[Int])
       assert(P16.drop(1, List(1, 2)) == List.empty[Int])
       assert(P16.drop(1, List(1, 2, 3)) == List.empty[Int])
