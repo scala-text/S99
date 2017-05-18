@@ -11,22 +11,21 @@ libraryDependencies ++= Seq(
 
 val unusedWarnings = (
   "-Ywarn-unused" ::
-  "-Ywarn-unused-import" ::
-  Nil
+    "-Ywarn-unused-import" ::
+    Nil
 )
 
 scalacOptions ++= (
   "-deprecation" ::
-  "-unchecked" ::
-  "-Xlint" ::
-  "-Xfuture" ::
-  "-language:existentials" ::
-  "-language:higherKinds" ::
-  "-language:implicitConversions" ::
-  "-Yno-adapted-args" ::
-  Nil
+    "-unchecked" ::
+    "-Xlint" ::
+    "-Xfuture" ::
+    "-language:existentials" ::
+    "-language:higherKinds" ::
+    "-language:implicitConversions" ::
+    "-Yno-adapted-args" ::
+    Nil
 ) ::: unusedWarnings
 
 Seq(Compile, Test).flatMap(c =>
-  scalacOptions in (c, console) --= unusedWarnings
-)
+  scalacOptions in (c, console) --= unusedWarnings)

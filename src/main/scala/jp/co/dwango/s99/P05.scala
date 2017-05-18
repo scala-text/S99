@@ -7,7 +7,7 @@ object P05 {
     @tailrec
     def go(rem: List[T], acc: List[T]): List[T] = rem match {
       case Nil => acc
-      case x::xs => go(xs, x::acc)
+      case x :: xs => go(xs, x :: acc)
     }
     go(list, Nil)
   }

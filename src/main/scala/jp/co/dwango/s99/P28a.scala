@@ -9,8 +9,8 @@ object P28a {
   def mergeSort[T](list: List[T])(lt: (T, T) => Boolean): List[T] = {
     def merge(list1: List[T], list2: List[T]): List[T] = {
       (list1, list2) match {
-        case (x::xs, y::ys) if lt(x, y) => x::merge(xs, list2)
-        case (x::xs, y::ys) => y::merge(list1, ys)
+        case (x :: xs, y :: ys) if lt(x, y) => x :: merge(xs, list2)
+        case (x :: xs, y :: ys) => y :: merge(list1, ys)
         case (Nil, ys) => ys
         case (xs, Nil) => xs
       }

@@ -9,8 +9,9 @@ class P23Check extends Properties("P23") {
       s <- Gen.listOfN(n, implicitly[Arbitrary[Int]].arbitrary)
     } yield (s, n)
 
-    Prop.forAll(gen){ case (s, n) =>
-      P23.randomSelect(n, s).length == n
+    Prop.forAll(gen) {
+      case (s, n) =>
+        P23.randomSelect(n, s).length == n
     }
   }
 }

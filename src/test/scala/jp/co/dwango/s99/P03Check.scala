@@ -10,8 +10,9 @@ class P03Check extends Properties("P03") {
       s <- Gen.listOfN(x, implicitly[Arbitrary[Int]].arbitrary)
     } yield (s, y)
 
-    Prop.forAll(gen){ case (s, i) =>
-      P03.nth(i, s) == s(i)
+    Prop.forAll(gen) {
+      case (s, i) =>
+        P03.nth(i, s) == s(i)
     }
   }
 }

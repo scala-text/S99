@@ -5,6 +5,6 @@ import Util.copyN
 
 object P12 {
   def decode[T](encoded: List[(Int, T)]): List[T] = {
-    flatMap(encoded){ case (n, e) => copyN(e, n) }
+    flatMap(encoded) { case (n, e) => copyN(e, n) }
   }
 }

@@ -12,7 +12,7 @@ object P47 {
     printf("%-6s", "B")
     printf("%-6s", "result")
     println()
-    for(a <- List(true, false); b <- List(true, false)) {
+    for (a <- List(true, false); b <- List(true, false)) {
       printf("%-6b", a)
       printf("%-6b", b)
       printf("%-6b", f(a, b))

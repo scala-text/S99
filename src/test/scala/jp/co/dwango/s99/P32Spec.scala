@@ -10,9 +10,10 @@ class P32Spec extends FunSpec with DiagrammedAssertions {
       assert(P32.gcd(0, 33) == 33)
     }
     it("for positive integer numbers") {
-      assert(P32.gcd(3 * 5 * 7 * 11, 3 * 5 * 7 * 11 * 17 * 19) == 3 * 5 * 7 * 11)
+      assert(
+        P32.gcd(3 * 5 * 7 * 11, 3 * 5 * 7 * 11 * 17 * 19) == 3 * 5 * 7 * 11)
       assert(P32.gcd(3, 3) == 3)
-      assert(P32.gcd(2 * 3 * 5 * 7, 2 * 3 * 5 * 17)  == 2 * 3 * 5)
+      assert(P32.gcd(2 * 3 * 5 * 7, 2 * 3 * 5 * 17) == 2 * 3 * 5)
       assert(P32.gcd(Int.MaxValue, Int.MaxValue) == Int.MaxValue)
     }
     it("for negative integer numbers") {
