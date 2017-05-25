@@ -42,14 +42,14 @@ object P67 {
           case Failure(_) => Success(None, input)
           case Success(result, rest) => Success(Some(result), rest)
       })
-    def |[U](that: => Parser[U]): Parser[Either[T, U]] =
+    def |[U >: T](that: => Parser[U]): Parser[U] =
       new Parser(input =>
         this.apply(input) match {
           case Failure(_) =>
             that(input) match {
-              case Success(result2, rest2) => Success(Right(result2), rest2)
+              case Success(result2, rest2) => Success(result2, rest2)
             }
-          case Success(result, rest) => Success(Left(result), rest)
+          case Success(result, rest) => Success(result, rest)
       })
     def ^^[U](fn: T => U): Parser[U] =
       new Parser(input =>
@@ -60,27 +60,28 @@ object P67 {
   }
   lazy val letter: Parser[Char] = new Parser(input => {
     if (input.length == 0) Failure("no rest input")
-    else if (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z' || input.charAt(
-               0) >= 'a' && input.charAt(0) <= 'z')
-      Success(input.charAt(0), input.substring(1))
-    else Failure(input.charAt(0) + " is not a letter")
+    else {
+      val c0 = input.charAt(0)
+      if (c0 >= 'A' && c0 <= 'Z' || c0 >= 'a' && c0 <= 'z')
+        Success(c0, input.substring(1))
+      else Failure(c0 + " is not a letter")
+    }
   })
   def char(c: Char): Parser[Char] =
     new Parser(input => {
       if (input.length == 0) Failure("no rest input")
-      else if (input.charAt(0) == c)
-        Success(input.charAt(0), input.substring(1))
-      else Failure(input.charAt(0) + " is not " + c)
+      else {
+        val c0 = input.charAt(0)
+        if (c0 == c)
+          Success(c0, input.substring(1))
+        else Failure(c0 + " is not " + c)
+      }
     })
-  lazy val tree: Parser[Tree[Char]] = (node | end) ^^ {
-    case Left(v) => v
-    case Right(v) => v
-  }
-  lazy val end: Parser[Tree[Char]] = new Parser(input => Success(End, input))
   lazy val node
-    : Parser[Node[Char]] = letter ~ (char('(') ~ tree ~ char(',') ~ tree ~ char(
+    : Parser[Node[Char]] = letter ~ (char('(') ~ node.? ~ char(',') ~ node.? ~ char(
     ')')).? ^^ {
     case c ~ None => Node(c, End, End)
-    case c ~ Some(_ ~ t1 ~ _ ~ t2 ~ _) => Node(c, t1, t2)
+    case c ~ Some(_ ~ leftOption ~ _ ~ rightOption ~ _) =>
+      Node(c, leftOption.getOrElse(End), rightOption.getOrElse(End))
   }
 }

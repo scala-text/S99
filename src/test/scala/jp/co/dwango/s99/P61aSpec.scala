@@ -8,10 +8,12 @@ class P61aSpec extends FunSpec with DiagrammedAssertions {
   describe("P61a") {
     it("collect value of leaves") {
       assert(
-        Node('a', Node('b'), Node('c', Node('d'), Node('e'))).leafList == List(
+        Node('a', Node('b'), Node('c', Node('d'), Node('e'))).leafList.toSet == Set(
           'b',
           'd',
           'e'))
+      assert(End.leafList == Nil)
+      assert(Node('b', Node('a'), End).leafList == List('a'))
     }
   }
 }
