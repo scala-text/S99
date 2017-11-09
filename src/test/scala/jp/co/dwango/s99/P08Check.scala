@@ -13,7 +13,7 @@ class P08Check extends Properties("P08") {
     }
     list match {
       case x :: xs => loop(xs, x, 0)
-      case Nil => 0
+      case Nil     => 0
     }
   }
   property("compress()") = forAll { (s: List[Int]) =>

@@ -16,8 +16,7 @@ class P11Spec extends FunSpec with DiagrammedAssertions {
       assert(P11.encodeModified(List(1, 1)) == List((2, 1)))
       assert(P11.encodeModified(List(1, 1, 2)) == List((2, 1), 2))
       assert(P11.encodeModified(List(1, 1, 2, 3)) == List((2, 1), 2, 3))
-      assert(
-        P11.encodeModified(List(1, 1, 2, 2, 3)) == List((2, 1), (2, 2), 3))
+      assert(P11.encodeModified(List(1, 1, 2, 2, 3)) == List((2, 1), (2, 2), 3))
     }
   }
 }
