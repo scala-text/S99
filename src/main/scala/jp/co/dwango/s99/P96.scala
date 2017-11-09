@@ -16,27 +16,29 @@ object P96 {
       new Parser(input =>
         this.apply(input) match {
           case f @ Failure(_) => f
-          case Success(rest) => that(rest)
+          case Success(rest)  => that(rest)
       })
     def ? : Parser =
       new Parser(input =>
         this.apply(input) match {
-          case Failure(_) => Success(input)
+          case Failure(_)     => Success(input)
           case s @ Success(_) => s
       })
     def |(that: => Parser): Parser =
       new Parser(input =>
         this.apply(input) match {
-          case Failure(_) => that(input)
+          case Failure(_)    => that(input)
           case Success(rest) => Success(rest)
       })
   }
-  lazy val letter: Parser = new Parser(input => {
-    if (input.length == 0) Failure("no rest input")
-    else if (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z' || input.charAt(
-               0) >= 'a' && input.charAt(0) <= 'z') Success(input.substring(1))
-    else Failure(input.charAt(0) + " is not a letter")
-  })
+  lazy val letter: Parser = new Parser(
+    input => {
+      if (input.length == 0) Failure("no rest input")
+      else if (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z' || input.charAt(
+                 0) >= 'a' && input.charAt(0) <= 'z')
+        Success(input.substring(1))
+      else Failure(input.charAt(0) + " is not a letter")
+    })
   lazy val digit: Parser = new Parser(input => {
     if (input.length == 0) Failure("no rest input")
     else if (input.charAt(0) >= '0' && input.charAt(0) <= '9')

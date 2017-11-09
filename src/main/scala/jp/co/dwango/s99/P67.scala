@@ -4,15 +4,15 @@ import binary_trees._
 object P67 {
   implicit class RichTree[T](tree: Tree[T]) {
     def toString2: String = tree match {
-      case Node(v, End, End) => v.toString
+      case Node(v, End, End)    => v.toString
       case Node(v, left, right) => s"$v(${left.toString2},${right.toString2})"
-      case End => ""
+      case End                  => ""
     }
   }
   object Tree {
     def fromString(str: String): Node[Char] = node(str) match {
       case Success(result, _) => result
-      case Failure(msg) => throw new IllegalArgumentException(msg)
+      case Failure(msg)       => throw new IllegalArgumentException(msg)
     }
   }
 
@@ -32,14 +32,14 @@ object P67 {
           case f @ Failure(_) => f
           case Success(result, rest) =>
             that(rest) match {
-              case f @ Failure(_) => f
+              case f @ Failure(_)          => f
               case Success(result2, rest2) => Success(result -> result2, rest2)
             }
       })
     def ? : Parser[Option[T]] =
       new Parser(input =>
         this.apply(input) match {
-          case Failure(_) => Success(None, input)
+          case Failure(_)            => Success(None, input)
           case Success(result, rest) => Success(Some(result), rest)
       })
     def |[U >: T](that: => Parser[U]): Parser[U] =
@@ -54,7 +54,7 @@ object P67 {
     def ^^[U](fn: T => U): Parser[U] =
       new Parser(input =>
         this.apply(input) match {
-          case f @ Failure(_) => f
+          case f @ Failure(_)        => f
           case Success(result, rest) => Success(fn(result), rest)
       })
   }

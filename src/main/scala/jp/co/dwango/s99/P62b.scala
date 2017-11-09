@@ -6,7 +6,7 @@ object P62b {
     def atLevel(level: Int): List[T] =
       if (level == 1) tree match {
         case Node(v, _, _) => v :: Nil
-        case End => Nil
+        case End           => Nil
       } else
         tree match {
           case Node(_, left, right) =>

@@ -11,8 +11,8 @@ object P61a {
         case Nil => acc
         case head :: tail =>
           head match {
-            case End => loop(tail, acc)
-            case Node(v, End, End) => loop(tail, v :: acc)
+            case End                  => loop(tail, acc)
+            case Node(v, End, End)    => loop(tail, v :: acc)
             case Node(_, left, right) => loop(left :: right :: tail, acc)
           }
       }

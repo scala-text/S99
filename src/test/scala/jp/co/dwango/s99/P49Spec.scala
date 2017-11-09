@@ -14,14 +14,7 @@ class P49Spec extends FunSpec with DiagrammedAssertions {
     }
     it("gray(3)") {
       assert(
-        gray(3) == List("000",
-                        "001",
-                        "011",
-                        "010",
-                        "110",
-                        "111",
-                        "101",
-                        "100"))
+        gray(3) == List("000", "001", "011", "010", "110", "111", "101", "100"))
     }
     it("gray2(1)") {
       assert(gray2(1) == List("0", "1"))
