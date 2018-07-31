@@ -5,7 +5,7 @@ cache:
   - $HOME/.ivy2/cache
   - $HOME/.sbt/launchers
 script:
-- sbt ++$TRAVIS_SCALA_VERSION scalafmtCheck test:scalafmtCheck scalafmtSbtCheck test
+- sbt "++${TRAVIS_SCALA_VERSION}!" scalafmtCheck test:scalafmtCheck scalafmtSbtCheck test
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 jdk: oraclejdk8
 scala:
