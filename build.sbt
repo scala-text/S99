@@ -2,7 +2,7 @@ organization := "jp.co.dwango"
 
 name := "S99"
 
-scalaVersion := "2.12.7"
+scalaVersion := "2.12.8"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.5" % "test",
