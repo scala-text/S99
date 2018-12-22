@@ -9,7 +9,8 @@ class P62bSpec extends FunSpec with DiagrammedAssertions {
     it("collect value of specific levels") {
       assert(
         Node('a', Node('b'), Node('c', Node('d'), Node('e')))
-          .atLevel(2) == List('b', 'c'))
+          .atLevel(2) == List('b', 'c')
+      )
     }
   }
 }

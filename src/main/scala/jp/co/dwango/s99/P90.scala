@@ -7,7 +7,8 @@ object P90 {
   def getPatterns(boardSize: Int)(
       col: Int = 0,
       restRow: Set[Int] = (0 until boardSize).toSet,
-      limitations: List[Equation] = Nil): List[List[Int]] =
+      limitations: List[Equation] = Nil
+  ): List[List[Int]] =
     if (col == boardSize) List(Nil)
     else {
       val patterns = ListBuffer.empty[List[Int]]
@@ -15,9 +16,11 @@ object P90 {
            if limitations.forall(equation => !equation.check(col, row))) {
         val f1 = Equation(Add(X, Y), Const(col + row)) // x + y = col + row
         val f2 = Equation(Y, Add(X, Const(row - col))) // y = x + row - col
-        val restPatterns = getPatterns(boardSize)(col + 1,
-                                                  restRow - row,
-                                                  f1 :: f2 :: limitations)
+        val restPatterns = getPatterns(boardSize)(
+          col + 1,
+          restRow - row,
+          f1 :: f2 :: limitations
+        )
         patterns ++= restPatterns.map(restPattern => row :: restPattern)
       }
       patterns.toList

@@ -9,7 +9,8 @@ class P22Check extends Properties("P22") {
       toByLong = from + 100L //to avoid overflow
       to <- Gen.choose(
         from,
-        if (toByLong > Int.MaxValue) Int.MaxValue else from + 100)
+        if (toByLong > Int.MaxValue) Int.MaxValue else from + 100
+      )
     } yield (from, to)
 
     Prop.forAll(gen) {

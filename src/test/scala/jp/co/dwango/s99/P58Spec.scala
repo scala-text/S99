@@ -9,9 +9,11 @@ class P58Spec extends FunSpec with DiagrammedAssertions {
     it("""Tree.symmetricBalancedTrees(5, "x")""") {
       assert(
         List(
-          Node("x",
-               Node("x", End, Node("x")),
-               Node("x", Node("x", End, End), End)),
+          Node(
+            "x",
+            Node("x", End, Node("x")),
+            Node("x", Node("x", End, End), End)
+          ),
           Node("x", Node("x", Node("x"), End), Node("x", End, Node("x")))
         ) ==
           Tree.symmetricBalancedTrees(5, "x")

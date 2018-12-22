@@ -9,9 +9,12 @@ class P61Spec extends FunSpec with DiagrammedAssertions {
     it("count leaves correctly") {
       assert(Node("a", Node("a"), End).leafCount == 1)
       assert(
-        Node('a',
-             Node('b', Node('d'), Node('e')),
-             Node('c', End, Node('f', Node('g'), End))).leafCount == 3)
+        Node(
+          'a',
+          Node('b', Node('d'), Node('e')),
+          Node('c', End, Node('f', Node('g'), End))
+        ).leafCount == 3
+      )
     }
   }
 }
