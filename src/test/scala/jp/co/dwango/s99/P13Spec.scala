@@ -15,7 +15,8 @@ class P13Spec extends FunSpec with DiagrammedAssertions {
       assert(P13.encodeDirect(List(1, 1, 2)) == List((2, 1), (1, 2)))
       assert(P13.encodeDirect(List(1, 1, 2, 3)) == List((2, 1), (1, 2), (1, 3)))
       assert(
-        P13.encodeDirect(List(1, 1, 2, 2, 3)) == List((2, 1), (2, 2), (1, 3)))
+        P13.encodeDirect(List(1, 1, 2, 2, 3)) == List((2, 1), (2, 2), (1, 3))
+      )
     }
   }
 }

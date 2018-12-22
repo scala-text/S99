@@ -18,8 +18,8 @@ class P14Spec extends FunSpec with DiagrammedAssertions {
       assert(P14.duplicate(List(1, 1, 2, 3)) == List(1, 1, 1, 1, 2, 2, 3, 3))
       assert(P14.duplicate(List(1, 2, 3, 3)) == List(1, 1, 2, 2, 3, 3, 3, 3))
       assert(
-        P14.duplicate(List(1, 1, 2, 3, 3)) == List(1, 1, 1, 1, 2, 2, 3, 3, 3,
-          3))
+        P14.duplicate(List(1, 1, 2, 3, 3)) == List(1, 1, 1, 1, 2, 2, 3, 3, 3, 3)
+      )
       assert(P14.duplicate(List(1, 2, 2, 3)) == List(1, 1, 2, 2, 2, 2, 3, 3))
     }
   }

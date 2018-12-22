@@ -31,7 +31,8 @@ class P17Spec extends FunSpec with DiagrammedAssertions {
     }
     it("for 0 index and empty list, split(n, s) returns (List(), List())") {
       assert(
-        P17.split(0, List.empty[Int]) == ((List.empty[Int], List.empty[Int])))
+        P17.split(0, List.empty[Int]) == ((List.empty[Int], List.empty[Int]))
+      )
     }
     it("otherwise") {
       assert(P17.split(0, List(1, 2)) == ((List(), List(1, 2))))

@@ -11,7 +11,9 @@ class P61aSpec extends FunSpec with DiagrammedAssertions {
         Node('a', Node('b'), Node('c', Node('d'), Node('e'))).leafList.toSet == Set(
           'b',
           'd',
-          'e'))
+          'e'
+        )
+      )
       assert(End.leafList == Nil)
       assert(Node('b', Node('a'), End).leafList == List('a'))
     }

@@ -21,12 +21,15 @@ class P15Spec extends FunSpec with DiagrammedAssertions {
       assert(P15.duplicateN(2, List(1, 2, 3)) == List(1, 1, 2, 2, 3, 3))
       assert(P15.duplicateN(1, List(1, 1, 2, 3)) == List(1, 1, 2, 3))
       assert(
-        P15.duplicateN(2, List(1, 2, 3, 3)) == List(1, 1, 2, 2, 3, 3, 3, 3))
+        P15.duplicateN(2, List(1, 2, 3, 3)) == List(1, 1, 2, 2, 3, 3, 3, 3)
+      )
       assert(
         P15.duplicateN(2, List(1, 1, 2, 3, 3)) == List(1, 1, 1, 1, 2, 2, 3, 3,
-          3, 3))
+          3, 3)
+      )
       assert(
-        P15.duplicateN(2, List(1, 2, 2, 3)) == List(1, 1, 2, 2, 2, 2, 3, 3))
+        P15.duplicateN(2, List(1, 2, 2, 3)) == List(1, 1, 2, 2, 2, 2, 3, 3)
+      )
     }
   }
 }

@@ -8,9 +8,11 @@ import P26.groupInto
 
 object P27b {
   def group[T](setting: List[Int], list: List[T]): List[List[List[T]]] = {
-    def group_(setting: List[Int],
-               n: Int,
-               list: List[T]): List[List[List[T]]] = {
+    def group_(
+        setting: List[Int],
+        n: Int,
+        list: List[T]
+    ): List[List[List[T]]] = {
       setting match {
         case Nil => List(Nil)
         case x :: xs =>

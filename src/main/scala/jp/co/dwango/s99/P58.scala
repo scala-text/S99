@@ -5,8 +5,10 @@ import P56._
 
 object P58 {
   object Tree {
-    def symmetricBalancedTrees[T](numberOfElements: Int,
-                                  content: T): List[Tree[T]] = {
+    def symmetricBalancedTrees[T](
+        numberOfElements: Int,
+        content: T
+    ): List[Tree[T]] = {
       P55.Tree.cBalanced(numberOfElements, content).filter { _.isSymmetric }
     }
   }

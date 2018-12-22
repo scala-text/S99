@@ -10,7 +10,9 @@ class P62Spec extends FunSpec with DiagrammedAssertions {
       assert(
         Node('a', Node('b'), Node('c', Node('d'), Node('e'))).internalList == List(
           'a',
-          'c'))
+          'c'
+        )
+      )
     }
   }
 }
