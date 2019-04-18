@@ -73,7 +73,7 @@ object P67 {
       val c0 = input.charAt(0)
       if (c0 >= 'A' && c0 <= 'Z' || c0 >= 'a' && c0 <= 'z')
         Success(c0, input.substring(1))
-      else Failure(c0 + " is not a letter")
+      else Failure(s"$c0 is not a letter")
     }
   })
   def char(c: Char): Parser[Char] =
@@ -83,7 +83,7 @@ object P67 {
         val c0 = input.charAt(0)
         if (c0 == c)
           Success(c0, input.substring(1))
-        else Failure(c0 + " is not " + c)
+        else Failure(s"$c0 is not $c")
       }
     })
   lazy val node
