@@ -87,7 +87,7 @@ object P67 {
       }
     })
   lazy val node
-    : Parser[Node[Char]] = letter ~ (char('(') ~ node.? ~ char(',') ~ node.? ~ char(
+      : Parser[Node[Char]] = letter ~ (char('(') ~ node.? ~ char(',') ~ node.? ~ char(
     ')'
   )).? ^^ {
     case c ~ None => Node(c, End, End)

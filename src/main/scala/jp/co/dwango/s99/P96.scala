@@ -56,6 +56,6 @@ object P96 {
     else Failure(input.charAt(0) + " is not a '_'")
   })
   lazy val identifierLoop
-    : Parser = UNDERSCORE.? ~ (letter | digit) ~ identifierLoop.?
+      : Parser = UNDERSCORE.? ~ (letter | digit) ~ identifierLoop.?
   lazy val identifier: Parser = letter ~ identifierLoop.?
 }
