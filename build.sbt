@@ -5,28 +5,38 @@ name := "S99"
 scalaVersion := "2.12.8"
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.0.7" % "test",
+  "org.scalatest" %% "scalatest" % "3.0.8-RC2" % "test",
   "org.scalacheck" %% "scalacheck" % "1.14.0" % "test"
 )
 
-val unusedWarnings = (
-  "-Ywarn-unused" ::
-    "-Ywarn-unused-import" ::
-    Nil
+val unusedWarnings = Def.setting(
+  CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, 11)) =>
+      List("-Ywarn-unused-import")
+    case _ =>
+      List("-Ywarn-unused:imports")
+  }
 )
 
 scalacOptions ++= (
   "-deprecation" ::
     "-unchecked" ::
     "-Xlint" ::
-    "-Xfuture" ::
     "-language:existentials" ::
     "-language:higherKinds" ::
     "-language:implicitConversions" ::
-    "-Yno-adapted-args" ::
     Nil
-) ::: unusedWarnings
+) ::: unusedWarnings.value
+
+scalacOptions ++= {
+  CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, 11 | 12)) =>
+      Seq("-Yno-adapted-args", "-Xfuture")
+    case _ =>
+      Nil
+  }
+}
 
 Seq(Compile, Test).flatMap(
-  c => scalacOptions in (c, console) --= unusedWarnings
+  c => scalacOptions in (c, console) --= unusedWarnings.value
 )
