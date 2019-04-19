@@ -42,18 +42,18 @@ object P96 {
     else if (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z' || input
                .charAt(0) >= 'a' && input.charAt(0) <= 'z')
       Success(input.substring(1))
-    else Failure(input.charAt(0) + " is not a letter")
+    else Failure(s"${input.charAt(0)} is not a letter")
   })
   lazy val digit: Parser = new Parser(input => {
     if (input.length == 0) Failure("no rest input")
     else if (input.charAt(0) >= '0' && input.charAt(0) <= '9')
       Success(input.substring(1))
-    else Failure(input.charAt(0) + " is not a digit")
+    else Failure(s"${input.charAt(0)} is not a digit")
   })
   lazy val UNDERSCORE: Parser = new Parser(input => {
     if (input.length == 0) Failure("no rest input")
     else if (input.charAt(0) == '_') Success(input.substring(1))
-    else Failure(input.charAt(0) + " is not a '_'")
+    else Failure(s"${input.charAt(0)} is not a '_'")
   })
   lazy val identifierLoop
     : Parser = UNDERSCORE.? ~ (letter | digit) ~ identifierLoop.?
