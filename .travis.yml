@@ -7,7 +7,7 @@ cache:
 script:
 - sbt "++${TRAVIS_SCALA_VERSION}!" scalafmtCheck test:scalafmtCheck scalafmtSbtCheck test
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
-jdk: oraclejdk8
+jdk: openjdk8
 scala:
 - 2.13.0
 - 2.12.8
