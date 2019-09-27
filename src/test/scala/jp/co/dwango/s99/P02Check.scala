@@ -1,7 +1,7 @@
 package jp.co.dwango.s99
 
 import org.scalacheck.Properties
-import org.scalacheck.Prop.{forAll, BooleanOperators}
+import org.scalacheck.Prop.{forAll, propBoolean}
 
 class P02Check extends Properties("P02") {
   property("penultimate()") = forAll { (s: List[Int]) =>
