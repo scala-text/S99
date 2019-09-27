@@ -1,5 +1,3 @@
-organization := "jp.co.dwango"
-
 name := "S99"
 
 scalaVersion := "2.12.10"
