@@ -2,7 +2,7 @@ package jp.co.dwango.s99
 
 import org.scalacheck.{Gen, Properties}
 import Gen.listOf, Gen.chooseNum
-import org.scalacheck.Prop.{BooleanOperators, forAll}
+import org.scalacheck.Prop.{propBoolean, forAll}
 
 class P18Check extends Properties("P18") {
   property("slice()") = forAll(
