@@ -11,5 +11,4 @@ object P04 {
     }
     go(list, 0)
   }
-
 }
