@@ -23,5 +23,4 @@ object P19 {
       case _   => rotate_+-(n, Nil, list)
     }
   }
-
 }
