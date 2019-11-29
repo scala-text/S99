@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P01Spec extends FunSpec with DiagrammedAssertions {
+class P01Spec extends AnyFunSpec with Diagrams {
   describe("P01") {
     it("for empty list(should fail)") {
       intercept[Throwable] {

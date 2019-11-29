@@ -1,10 +1,11 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
 import binary_trees._
 import P62._
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P62Spec extends FunSpec with DiagrammedAssertions {
+class P62Spec extends AnyFunSpec with Diagrams {
   describe("P62") {
     it("collect value of internal nodes") {
       assert(

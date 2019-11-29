@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P32Spec extends FunSpec with DiagrammedAssertions {
+class P32Spec extends AnyFunSpec with Diagrams {
   describe("P32") {
     it("for zero test") {
       assert(P32.gcd(0, 0) == 0)

@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P03Spec extends FunSpec with DiagrammedAssertions {
+class P03Spec extends AnyFunSpec with Diagrams {
   describe("P03") {
     it("any index with empty list should fail") {
       val emptyList = List.empty[Int]

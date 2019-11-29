@@ -1,9 +1,10 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
 import P96._
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P96Spec extends FunSpec with DiagrammedAssertions {
+class P96Spec extends AnyFunSpec with Diagrams {
   describe("P96") {
     it("for letter parser") {
       assert(letter("a") == Success(""))

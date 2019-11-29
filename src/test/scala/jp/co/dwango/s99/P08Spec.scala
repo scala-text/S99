@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P08Spec extends FunSpec with DiagrammedAssertions {
+class P08Spec extends AnyFunSpec with Diagrams {
   describe("P08") {
     it("for empty list, compress(s) is s") {
       assert(P08.compress(List.empty[Int]) == List.empty[Int])

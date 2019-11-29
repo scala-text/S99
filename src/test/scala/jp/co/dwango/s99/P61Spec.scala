@@ -1,10 +1,11 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
 import binary_trees._
 import P61._
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P61Spec extends FunSpec with DiagrammedAssertions {
+class P61Spec extends AnyFunSpec with Diagrams {
   describe("P61") {
     it("count leaves correctly") {
       assert(Node("a", Node("a"), End).leafCount == 1)

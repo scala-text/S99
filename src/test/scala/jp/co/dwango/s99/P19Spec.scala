@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P19Spec extends FunSpec with DiagrammedAssertions {
+class P19Spec extends AnyFunSpec with Diagrams {
   describe("P19") {
     it("for empty list, rotate(n, s) throws Exception") {
       intercept[Throwable] {
