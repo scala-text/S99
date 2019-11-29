@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P06Spec extends FunSpec with DiagrammedAssertions {
+class P06Spec extends AnyFunSpec with Diagrams {
   describe("P06") {
     it("for empty list, isPalindrome(s) should be true") {
       assert(P06.isPalindrome(List.empty[Int]))

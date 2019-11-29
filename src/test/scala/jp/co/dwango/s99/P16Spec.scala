@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P16Spec extends FunSpec with DiagrammedAssertions {
+class P16Spec extends AnyFunSpec with Diagrams {
   describe("P16") {
     it("for index less than equal 0, drop(i, s) throws Exception") {
       intercept[Throwable] {

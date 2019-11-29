@@ -1,9 +1,10 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
 import P33.RichInt
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P33Spec extends FunSpec with DiagrammedAssertions {
+class P33Spec extends AnyFunSpec with Diagrams {
   describe("P33") {
     it("for coprime numbers, x.isCoprime(y) returns true") {
       assert(3.isCoPrime(8))

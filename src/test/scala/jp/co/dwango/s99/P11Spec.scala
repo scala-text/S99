@@ -1,8 +1,9 @@
 package jp.co.dwango.s99
 
-import org.scalatest.{DiagrammedAssertions, FunSpec}
+import org.scalatest.diagrams.Diagrams
+import org.scalatest.funspec.AnyFunSpec
 
-class P11Spec extends FunSpec with DiagrammedAssertions {
+class P11Spec extends AnyFunSpec with Diagrams {
   describe("P11") {
     it("for empty list, encodeModified(s) is s") {
       assert(P11.encodeModified(List.empty[Int]) == List.empty[Int])
