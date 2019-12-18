@@ -35,6 +35,6 @@ scalacOptions ++= {
   }
 }
 
-Seq(Compile, Test).flatMap(
-  c => scalacOptions in (c, console) --= unusedWarnings.value
+Seq(Compile, Test).flatMap(c =>
+  scalacOptions in (c, console) --= unusedWarnings.value
 )
