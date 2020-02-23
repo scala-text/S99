@@ -13,28 +13,25 @@ object P96 {
   class Parser(fn: String => Result) extends (String => Result) {
     override def apply(v1: String): Result = fn(v1)
     def ~(that: => Parser): Parser =
-      new Parser(
-        input =>
-          this.apply(input) match {
-            case f @ Failure(_) => f
-            case Success(rest)  => that(rest)
-          }
+      new Parser(input =>
+        this.apply(input) match {
+          case f @ Failure(_) => f
+          case Success(rest)  => that(rest)
+        }
       )
     def ? : Parser =
-      new Parser(
-        input =>
-          this.apply(input) match {
-            case Failure(_)     => Success(input)
-            case s @ Success(_) => s
-          }
+      new Parser(input =>
+        this.apply(input) match {
+          case Failure(_)     => Success(input)
+          case s @ Success(_) => s
+        }
       )
     def |(that: => Parser): Parser =
-      new Parser(
-        input =>
-          this.apply(input) match {
-            case Failure(_)    => that(input)
-            case Success(rest) => Success(rest)
-          }
+      new Parser(input =>
+        this.apply(input) match {
+          case Failure(_)    => that(input)
+          case Success(rest) => Success(rest)
+        }
       )
   }
   lazy val letter: Parser = new Parser(input => {
@@ -55,7 +52,7 @@ object P96 {
     else if (input.charAt(0) == '_') Success(input.substring(1))
     else Failure(s"${input.charAt(0)} is not a '_'")
   })
-  lazy val identifierLoop
-      : Parser = UNDERSCORE.? ~ (letter | digit) ~ identifierLoop.?
+  lazy val identifierLoop: Parser =
+    UNDERSCORE.? ~ (letter | digit) ~ identifierLoop.?
   lazy val identifier: Parser = letter ~ identifierLoop.?
 }

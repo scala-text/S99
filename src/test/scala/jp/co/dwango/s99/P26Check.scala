@@ -15,9 +15,7 @@ class P26Check extends Properties("P26") {
         val rc = s.combinations(n).map { _.sorted }.toList
         lc.exists { l =>
           rc.contains(l)
-        } && rc.exists { r =>
-          lc.contains(r)
-        }
+        } && rc.exists { r => lc.contains(r) }
     }
   }
 }

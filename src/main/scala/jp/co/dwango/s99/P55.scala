@@ -11,9 +11,7 @@ object P55 {
         val ls = cBalanced((count - 1) / 2, value)
         val rs = cBalanced((count - 1) / 2 + 1, value)
         ls.flatMap { l =>
-          rs.flatMap { r =>
-            List(new Node(value, l, r), new Node(value, r, l))
-          }
+          rs.flatMap { r => List(new Node(value, l, r), new Node(value, r, l)) }
         }
       } else {
         val childrenList = cBalanced(count / 2, value)

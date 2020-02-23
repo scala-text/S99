@@ -8,12 +8,8 @@ object P49 {
       List("")
     } else {
       val r = gray(n - 1)
-      val resultL = r.map { xs =>
-        "0" + xs
-      }
-      val resultR = r.reverse.map { xs =>
-        "1" + xs
-      }
+      val resultL = r.map { xs => "0" + xs }
+      val resultR = r.reverse.map { xs => "1" + xs }
       resultL ::: resultR
     }
   }

@@ -11,9 +11,7 @@ class P27aCheck extends Properties("P27a") {
     Prop.forAll(gen) { (s: List[Int]) =>
       val sorted = s.sorted
       val a = P27a.group3(sorted)
-      a.forall { b =>
-        b.flatten.sorted == sorted
-      }
+      a.forall { b => b.flatten.sorted == sorted }
     }
   }
 }

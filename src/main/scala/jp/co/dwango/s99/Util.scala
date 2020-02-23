@@ -16,9 +16,7 @@ object Util {
     case Nil     => Nil
   }
   def flatMap[A, B](list: List[A])(f: A => List[B]): List[B] = {
-    foldLeft(list, List[B]()) { (b, a) =>
-      append(b, f(a))
-    }
+    foldLeft(list, List[B]()) { (b, a) => append(b, f(a)) }
   }
   def copyN[T](t: T, n: Int): List[T] = n match {
     case 0          => List()

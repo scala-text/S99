@@ -5,7 +5,10 @@ import org.scalacheck.{Prop, Properties, Gen, Arbitrary}
 class P27bCheck extends Properties("P27b") {
   property("group()") = {
     val gen = for {
-      g1 <- Gen.listOfN(3, Gen.choose(1, 3)) // To avoid StackOverflowError, small numbers are chosen
+      g1 <- Gen.listOfN(
+        3,
+        Gen.choose(1, 3)
+      ) // To avoid StackOverflowError, small numbers are chosen
       g2 <- Gen.listOfN(g1.sum, implicitly[Arbitrary[Int]].arbitrary)
       if g2.distinct.length == g2.length
     } yield (g1, g2)

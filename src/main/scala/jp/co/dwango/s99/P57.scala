@@ -23,9 +23,7 @@ object P57 {
     def fromList[T](
         elements: List[T]
     )(implicit view: T => Ordered[T]): Tree[T] = {
-      elements.foldLeft[Tree[T]](End) { (tree, t) =>
-        tree.addValue(t)
-      }
+      elements.foldLeft[Tree[T]](End) { (tree, t) => tree.addValue(t) }
     }
   }
 }
