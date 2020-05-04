@@ -15,14 +15,15 @@ object P28a {
         case (xs, Nil)                      => xs
       }
     }
-    def mergeSort1(list: List[T], len: Int): List[T] = len match {
-      case 0 => Nil
-      case 1 => list
-      case _ =>
-        val m = len / 2
-        val (fst, snd) = split(m, list)
-        merge(mergeSort1(fst, m), mergeSort1(snd, len - m))
-    }
+    def mergeSort1(list: List[T], len: Int): List[T] =
+      len match {
+        case 0 => Nil
+        case 1 => list
+        case _ =>
+          val m = len / 2
+          val (fst, snd) = split(m, list)
+          merge(mergeSort1(fst, m), mergeSort1(snd, len - m))
+      }
     mergeSort1(list, length(list))
   }
 

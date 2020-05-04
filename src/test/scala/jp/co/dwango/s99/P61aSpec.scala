@@ -9,7 +9,11 @@ class P61aSpec extends AnyFunSpec with Diagrams {
   describe("P61a") {
     it("collect value of leaves") {
       assert(
-        Node('a', Node('b'), Node('c', Node('d'), Node('e'))).leafList.toSet == Set(
+        Node(
+          'a',
+          Node('b'),
+          Node('c', Node('d'), Node('e'))
+        ).leafList.toSet == Set(
           'b',
           'd',
           'e'

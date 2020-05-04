@@ -12,8 +12,10 @@ object P90 {
     if (col == boardSize) List(Nil)
     else {
       val patterns = ListBuffer.empty[List[Int]]
-      for (row <- restRow
-           if limitations.forall(equation => !equation.check(col, row))) {
+      for (
+        row <- restRow
+        if limitations.forall(equation => !equation.check(col, row))
+      ) {
         val f1 = Equation(Add(X, Y), Const(col + row)) // x + y = col + row
         val f2 = Equation(Y, Add(X, Const(row - col))) // y = x + row - col
         val restPatterns = getPatterns(boardSize)(

@@ -9,7 +9,11 @@ class P62Spec extends AnyFunSpec with Diagrams {
   describe("P62") {
     it("collect value of internal nodes") {
       assert(
-        Node('a', Node('b'), Node('c', Node('d'), Node('e'))).internalList == List(
+        Node(
+          'a',
+          Node('b'),
+          Node('c', Node('d'), Node('e'))
+        ).internalList == List(
           'a',
           'c'
         )

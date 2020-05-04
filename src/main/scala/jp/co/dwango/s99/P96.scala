@@ -36,8 +36,10 @@ object P96 {
   }
   lazy val letter: Parser = new Parser(input => {
     if (input.length == 0) Failure("no rest input")
-    else if (input.charAt(0) >= 'A' && input.charAt(0) <= 'Z' || input
-               .charAt(0) >= 'a' && input.charAt(0) <= 'z')
+    else if (
+      input.charAt(0) >= 'A' && input.charAt(0) <= 'Z' || input
+        .charAt(0) >= 'a' && input.charAt(0) <= 'z'
+    )
       Success(input.substring(1))
     else Failure(s"${input.charAt(0)} is not a letter")
   })
