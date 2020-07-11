@@ -9,6 +9,6 @@ script:
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 jdk: openjdk8
 scala:
-- 2.13.2
+- 2.13.3
 - 2.12.11
 - 2.11.12
