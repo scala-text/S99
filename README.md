@@ -1,4 +1,4 @@
-S99 [![Build Status](https://travis-ci.com/scala-text/S99.png?branch=master)](https://travis-ci.com/scala-text/S99)
+S99 [![Build Status](https://travis-ci.com/scala-text/S99.svg?branch=master)](https://travis-ci.com/scala-text/S99)
 ===
 
 S99 http://aperiodic.net/phil/scala/s-99/ の模範解答（例）を載せています。プロジェクトは
