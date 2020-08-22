@@ -3,7 +3,7 @@ name := "S99"
 scalaVersion := "2.12.11"
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.2.1" % "test",
+  "org.scalatest" %% "scalatest" % "3.2.2" % "test",
   "org.scalacheck" %% "scalacheck" % "1.14.3" % "test"
 )
 
