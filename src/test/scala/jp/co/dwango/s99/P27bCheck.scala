@@ -13,14 +13,13 @@ class P27bCheck extends Properties("P27b") {
       if g2.distinct.length == g2.length
     } yield (g1, g2)
 
-    Prop.forAll(gen) {
-      case (s1: List[Int], s2: List[Int]) =>
-        val a: List[List[List[Int]]] = P27b.group(s1, s2)
-        a.forall { b =>
-          s1.length == b.length && b.zip(s1).forall {
-            case (c, n) => c.length == n && c.distinct.length == c.length
-          }
+    Prop.forAll(gen) { case (s1: List[Int], s2: List[Int]) =>
+      val a: List[List[List[Int]]] = P27b.group(s1, s2)
+      a.forall { b =>
+        s1.length == b.length && b.zip(s1).forall { case (c, n) =>
+          c.length == n && c.distinct.length == c.length
         }
+      }
     }
   }
 }

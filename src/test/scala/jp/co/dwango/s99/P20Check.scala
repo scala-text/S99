@@ -10,11 +10,10 @@ class P20Check extends Properties("P20") {
       s <- Gen.listOfN(x, implicitly[Arbitrary[Int]].arbitrary)
     } yield (s, y)
 
-    Prop.forAll(gen) {
-      case (s, i) =>
-        P20.removeAt(i, s)._1 == s.zipWithIndex
-          .filterNot { case (_, j) => i == j }
-          .map { _._1 }
+    Prop.forAll(gen) { case (s, i) =>
+      P20.removeAt(i, s)._1 == s.zipWithIndex
+        .filterNot { case (_, j) => i == j }
+        .map { _._1 }
     }
   }
 }

@@ -16,8 +16,8 @@ object P27b {
       setting match {
         case Nil => List(Nil)
         case x :: xs =>
-          flatMap(groupInto(n, x, list)) {
-            case (s, r) => map(group_(xs, n - x, r))(k => k.::(s))
+          flatMap(groupInto(n, x, list)) { case (s, r) =>
+            map(group_(xs, n - x, r))(k => k.::(s))
           }
       }
     }

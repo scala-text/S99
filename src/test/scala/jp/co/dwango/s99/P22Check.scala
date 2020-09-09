@@ -13,9 +13,8 @@ class P22Check extends Properties("P22") {
       )
     } yield (from, to)
 
-    Prop.forAll(gen) {
-      case (from, to) =>
-        P22.range(from, to) == (from to to).toList
+    Prop.forAll(gen) { case (from, to) =>
+      P22.range(from, to) == (from to to).toList
     }
   }
 }

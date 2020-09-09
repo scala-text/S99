@@ -9,13 +9,12 @@ class P26Check extends Properties("P26") {
       s <- Gen.listOfN(n + 5, implicitly[Arbitrary[Int]].arbitrary)
     } yield (s, n)
 
-    Prop.forAll(gen) {
-      case (s, n) =>
-        val lc = P26.combinations(n, s).map { _.sorted }
-        val rc = s.combinations(n).map { _.sorted }.toList
-        lc.exists { l =>
-          rc.contains(l)
-        } && rc.exists { r => lc.contains(r) }
+    Prop.forAll(gen) { case (s, n) =>
+      val lc = P26.combinations(n, s).map { _.sorted }
+      val rc = s.combinations(n).map { _.sorted }.toList
+      lc.exists { l =>
+        rc.contains(l)
+      } && rc.exists { r => lc.contains(r) }
     }
   }
 }

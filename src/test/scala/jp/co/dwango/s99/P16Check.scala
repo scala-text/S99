@@ -10,9 +10,8 @@ class P16Check extends Properties("P16") {
       (s: List[Int], i: Int) =>
         (P16.drop(i, s) == s.zipWithIndex
           .map { case (e, j) => (e, j + 1) }
-          .filterNot {
-            case (e, j) =>
-              j % i == 0
+          .filterNot { case (e, j) =>
+            j % i == 0
           }
           .map { _._1 })
     }
