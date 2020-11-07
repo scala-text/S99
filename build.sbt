@@ -4,7 +4,7 @@ scalaVersion := "2.12.11"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.2" % "test",
-  "org.scalacheck" %% "scalacheck" % "1.15.0" % "test"
+  "org.scalacheck" %% "scalacheck" % "1.15.1" % "test"
 )
 
 val unusedWarnings = Def.setting(
