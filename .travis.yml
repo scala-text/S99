@@ -6,9 +6,14 @@ cache:
   - $HOME/.sbt/launchers
 script:
 - sbt "++${TRAVIS_SCALA_VERSION}!" scalafmtCheck test:scalafmtCheck scalafmtSbtCheck test
+before_cache:
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 jdk: openjdk8
 scala:
 - 2.13.3
 - 2.12.11
 - 2.11.12
+matrix:
+  include:
+  - scala: Scala-3
+    script: sbt '++ 3.0.0-M1!' compile

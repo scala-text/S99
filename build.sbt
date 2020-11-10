@@ -16,15 +16,26 @@ val unusedWarnings = Def.setting(
   }
 )
 
-scalacOptions ++= (
-  "-deprecation" ::
-    "-unchecked" ::
-    "-Xlint" ::
-    "-language:existentials" ::
-    "-language:higherKinds" ::
-    "-language:implicitConversions" ::
-    Nil
-) ::: unusedWarnings.value
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-unchecked",
+  "-language:existentials",
+  "-language:higherKinds",
+  "-language:implicitConversions"
+)
+
+scalacOptions ++= {
+  if (isDotty.value) {
+    Seq(
+      "-source",
+      "3.0-migration"
+    )
+  } else {
+    (unusedWarnings.value: @sbtUnchecked) ++ Seq(
+      "-Xlint"
+    )
+  }
+}
 
 scalacOptions ++= {
   CrossVersion.partialVersion(scalaVersion.value) match {
@@ -38,3 +49,19 @@ scalacOptions ++= {
 Seq(Compile, Test).flatMap(c =>
   scalacOptions in (c, console) --= unusedWarnings.value
 )
+
+// TODO
+val excludeScala3 = Set(
+  "P57.scala"
+)
+
+Seq(Compile, Test).map { c =>
+  c / sources := {
+    val xs = (c / sources).value
+    if (isDotty.value) {
+      xs.filterNot(f => excludeScala3(f.getName))
+    } else {
+      xs
+    }
+  }
+}
