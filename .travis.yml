@@ -10,8 +10,8 @@ before_cache:
 - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
 jdk: openjdk8
 scala:
-- 2.13.3
-- 2.12.11
+- 2.13.4
+- 2.12.12
 - 2.11.12
 matrix:
   include:

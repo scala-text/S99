@@ -1,6 +1,6 @@
 name := "S99"
 
-scalaVersion := "2.12.11"
+scalaVersion := "2.12.12"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.3" % "test",
