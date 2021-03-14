@@ -6,7 +6,7 @@ import org.scalatest.funspec.AnyFunSpec
 class P12Spec extends AnyFunSpec with Diagrams {
   describe("P12") {
     it("for empty list, decode(s) is s") {
-      assert(P12.decode(List.empty[(Int, Int)]) == List.empty[(Int, Int)])
+      assert(P12.decode(List.empty[(Int, Int)]).isEmpty)
     }
     it("for list has one element") {
       assert(P12.decode(List((1, 1))) == List(1))
