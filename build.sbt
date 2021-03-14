@@ -54,9 +54,7 @@ Seq(Compile, Test).flatMap(c =>
   scalacOptions in (c, console) --= unusedWarnings.value
 )
 
-// TODO
-val excludeScala3 = Set(
-  "P57.scala"
+val excludeScala3 = Set[String](
 )
 
 Seq(Compile, Test).map { c =>
