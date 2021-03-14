@@ -61,7 +61,9 @@ Seq(Compile, Test).map { c =>
   c / sources := {
     val xs = (c / sources).value
     if (isDotty.value) {
+      // TODO scalatest diagram assert does not work with Scala 3
       xs.filterNot(f => excludeScala3(f.getName))
+        .filterNot(f => f.getName.endsWith("Spec.scala"))
     } else {
       xs
     }
