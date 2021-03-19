@@ -51,7 +51,7 @@ scalacOptions ++= {
 }
 
 Seq(Compile, Test).flatMap(c =>
-  scalacOptions in (c, console) --= unusedWarnings.value
+  (c / console / scalacOptions) --= unusedWarnings.value
 )
 
 val excludeScala3 = Set[String](
