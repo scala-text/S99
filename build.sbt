@@ -2,6 +2,10 @@ name := "S99"
 
 def Scala212 = "2.12.13"
 
+val isScala3 = Def.setting(
+  CrossVersion.partialVersion(scalaVersion.value).exists(_._1 == 3)
+)
+
 scalaVersion := Scala212
 
 crossScalaVersions := Seq(Scala212, "2.13.5")
@@ -29,7 +33,7 @@ scalacOptions ++= Seq(
 )
 
 scalacOptions ++= {
-  if (isDotty.value) {
+  if (isScala3.value) {
     Seq(
       "-source",
       "3.0-migration"
@@ -60,7 +64,7 @@ val excludeScala3 = Set[String](
 Seq(Compile, Test).map { c =>
   c / sources := {
     val xs = (c / sources).value
-    if (isDotty.value) {
+    if (isScala3.value) {
       // TODO scalatest diagram assert does not work with Scala 3
       xs.filterNot(f => excludeScala3(f.getName))
         .filterNot(f => f.getName.endsWith("Spec.scala"))
