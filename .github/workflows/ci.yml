@@ -29,7 +29,7 @@ jobs:
             sbt -v "+ scalafmtCheckAll" scalafmtSbtCheck "+ test"
             ;;
           "scala_3")
-            sbt -v scalafmtCheckAll scalafmtSbtCheck '++ 3.0.0-RC3!' test
+            sbt -v scalafmtCheckAll scalafmtSbtCheck '++ 3.0.0!' test
             ;;
           *)
             echo "unknown job-name"
