@@ -16,12 +16,7 @@ libraryDependencies ++= Seq(
 )
 
 val unusedWarnings = Def.setting(
-  CrossVersion.partialVersion(scalaVersion.value) match {
-    case Some((2, 11)) =>
-      List("-Ywarn-unused-import")
-    case _ =>
-      List("-Ywarn-unused:imports")
-  }
+  List("-Ywarn-unused:imports")
 )
 
 scalacOptions ++= Seq(
