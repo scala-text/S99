@@ -1,9 +1,8 @@
 package jp.co.dwango.s99
 
-import org.scalatest.diagrams.Diagrams
 import org.scalatest.funspec.AnyFunSpec
 
-class P17Spec extends AnyFunSpec with Diagrams {
+class P17Spec extends AnyFunSpec {
   describe("P17") {
     it("for index less than 0, split(n, s) throws Exception") {
       intercept[Throwable] {

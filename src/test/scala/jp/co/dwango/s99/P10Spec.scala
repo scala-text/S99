@@ -1,9 +1,8 @@
 package jp.co.dwango.s99
 
-import org.scalatest.diagrams.Diagrams
 import org.scalatest.funspec.AnyFunSpec
 
-class P10Spec extends AnyFunSpec with Diagrams {
+class P10Spec extends AnyFunSpec {
   describe("P10") {
     it("for empty list, encode(s) is s") {
       assert(P10.encode(List.empty[Int]) == List.empty[(Int, Int)])

@@ -50,20 +50,3 @@ scalacOptions ++= {
 Seq(Compile, Test).flatMap(c =>
   (c / console / scalacOptions) --= unusedWarnings.value
 )
-
-val excludeScala3 = Set[String](
-)
-
-Seq(Compile, Test).map { c =>
-  c / sources := {
-    val xs = (c / sources).value
-    if (isScala3.value) {
-      // TODO scalatest diagram assert does not work with Scala 3
-      // https://github.com/scalatest/scalatest/issues/2019
-      xs.filterNot(f => excludeScala3(f.getName))
-        .filterNot(f => f.getName.endsWith("Spec.scala"))
-    } else {
-      xs
-    }
-  }
-}
