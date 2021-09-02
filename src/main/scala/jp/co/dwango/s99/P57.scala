@@ -11,8 +11,9 @@ object P57 {
     )(implicit view: T => Ordered[U]): Node[U] = {
       self match {
         case Node(value, left, right) =>
-          if (value < newValue) Node(value, left, right.addValue(newValue))
-          else if (value > newValue)
+          if (view(value) < newValue)
+            Node(value, left, right.addValue(newValue))
+          else if (view(value) > newValue)
             Node(value, left.addValue(newValue), right)
           else Node(value, left, right)
         case End => Node(newValue, End, End)
