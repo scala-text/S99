@@ -30,8 +30,6 @@ scalacOptions ++= Seq(
 scalacOptions ++= {
   if (isScala3.value) {
     Seq(
-      "-source",
-      "3.0-migration"
     )
   } else {
     unusedWarnings.value ++ Seq(
