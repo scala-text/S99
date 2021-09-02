@@ -8,7 +8,7 @@ val isScala3 = Def.setting(
 
 scalaVersion := Scala212
 
-crossScalaVersions := Seq(Scala212, "2.13.6", "3.0.1")
+crossScalaVersions := Seq(Scala212, "2.13.6", "3.0.2")
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.9" % "test",
