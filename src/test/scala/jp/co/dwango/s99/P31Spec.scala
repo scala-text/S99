@@ -1,10 +1,10 @@
 package jp.co.dwango.s99
 
 import P31._
-import org.scalatest.diagrams.Diagrams
+
 import org.scalatest.funspec.AnyFunSpec
 
-class P31Spec extends AnyFunSpec with Diagrams {
+class P31Spec extends AnyFunSpec {
   describe("P31") {
     it("for prime number") {
       assert(2.isPrime)

@@ -2,10 +2,10 @@ package jp.co.dwango.s99
 
 import binary_trees._
 import P61._
-import org.scalatest.diagrams.Diagrams
+
 import org.scalatest.funspec.AnyFunSpec
 
-class P61Spec extends AnyFunSpec with Diagrams {
+class P61Spec extends AnyFunSpec {
   describe("P61") {
     it("count leaves correctly") {
       assert(Node("a", Node("a"), End).leafCount == 1)

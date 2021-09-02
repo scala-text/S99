@@ -2,10 +2,10 @@ package jp.co.dwango.s99
 
 import binary_trees._
 import P62b._
-import org.scalatest.diagrams.Diagrams
+
 import org.scalatest.funspec.AnyFunSpec
 
-class P62bSpec extends AnyFunSpec with Diagrams {
+class P62bSpec extends AnyFunSpec {
   describe("P62b") {
     it("collect value of specific levels") {
       assert(

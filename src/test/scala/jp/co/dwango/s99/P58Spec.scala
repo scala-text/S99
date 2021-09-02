@@ -2,10 +2,10 @@ package jp.co.dwango.s99
 
 import jp.co.dwango.s99.P58.Tree
 import jp.co.dwango.s99.binary_trees.{Node, End}
-import org.scalatest.diagrams.Diagrams
+
 import org.scalatest.funspec.AnyFunSpec
 
-class P58Spec extends AnyFunSpec with Diagrams {
+class P58Spec extends AnyFunSpec {
   describe("P58") {
     it("""Tree.symmetricBalancedTrees(5, "x")""") {
       assert(

@@ -2,10 +2,10 @@ package jp.co.dwango.s99
 
 import binary_trees._
 import P61a._
-import org.scalatest.diagrams.Diagrams
+
 import org.scalatest.funspec.AnyFunSpec
 
-class P61aSpec extends AnyFunSpec with Diagrams {
+class P61aSpec extends AnyFunSpec {
   describe("P61a") {
     it("collect value of leaves") {
       assert(

@@ -1,9 +1,8 @@
 package jp.co.dwango.s99
 
-import org.scalatest.diagrams.Diagrams
 import org.scalatest.funspec.AnyFunSpec
 
-class P14Spec extends AnyFunSpec with Diagrams {
+class P14Spec extends AnyFunSpec {
   describe("P14") {
     it("for empty list, duplicate(s) is s") {
       assert(P14.duplicate(List.empty[Int]) == List.empty[Int])

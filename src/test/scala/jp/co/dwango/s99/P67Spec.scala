@@ -2,10 +2,10 @@ package jp.co.dwango.s99
 
 import P67._
 import binary_trees._
-import org.scalatest.diagrams.Diagrams
+
 import org.scalatest.funspec.AnyFunSpec
 
-class P67Spec extends AnyFunSpec with Diagrams {
+class P67Spec extends AnyFunSpec {
   describe("P67") {
     it("represents another string representation") {
       assert(

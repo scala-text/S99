@@ -2,10 +2,10 @@ package jp.co.dwango.s99
 
 import P49.gray
 import P49.gray2
-import org.scalatest.diagrams.Diagrams
+
 import org.scalatest.funspec.AnyFunSpec
 
-class P49Spec extends AnyFunSpec with Diagrams {
+class P49Spec extends AnyFunSpec {
   describe("P49") {
     it("gray(1)") {
       assert(gray(1) == List("0", "1"))

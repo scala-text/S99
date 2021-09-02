@@ -1,9 +1,8 @@
 package jp.co.dwango.s99
 
-import org.scalatest.diagrams.Diagrams
 import org.scalatest.funspec.AnyFunSpec
 
-class P05Spec extends AnyFunSpec with Diagrams {
+class P05Spec extends AnyFunSpec {
   describe("P05") {
     it("for empty list, reverse(s) should be itself") {
       assert(P05.reverse(List.empty[Int]) == List.empty[Int])

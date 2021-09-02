@@ -1,9 +1,8 @@
 package jp.co.dwango.s99
 
-import org.scalatest.diagrams.Diagrams
 import org.scalatest.funspec.AnyFunSpec
 
-class P07Spec extends AnyFunSpec with Diagrams {
+class P07Spec extends AnyFunSpec {
   describe("P07") {
     it("for empty list, flatten(s) is s") {
       assert(P07.flatten(List.empty[Int]) == List.empty[Int])
