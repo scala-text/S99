@@ -34,7 +34,7 @@ scalacOptions ++= {
       "3.0-migration"
     )
   } else {
-    (unusedWarnings.value: @sbtUnchecked) ++ Seq(
+    unusedWarnings.value ++ Seq(
       "-Xlint"
     )
   }
