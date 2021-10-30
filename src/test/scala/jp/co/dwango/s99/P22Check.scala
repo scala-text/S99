@@ -6,7 +6,7 @@ class P22Check extends Properties("P22") {
   property("range()") = {
     val gen = for {
       from <- implicitly[Arbitrary[Int]].arbitrary
-      toByLong = from + 100L //to avoid overflow
+      toByLong = from + 100L // to avoid overflow
       to <- Gen.choose(
         from,
         if (toByLong > Int.MaxValue) Int.MaxValue else from + 100
