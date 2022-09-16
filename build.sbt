@@ -12,7 +12,7 @@ crossScalaVersions := Seq(Scala212, "2.13.8", "3.2.0")
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.13" % "test",
-  "org.scalacheck" %% "scalacheck" % "1.16.0" % "test"
+  "org.scalacheck" %% "scalacheck" % "1.17.0" % "test"
 )
 
 val unusedWarnings = Def.setting(
