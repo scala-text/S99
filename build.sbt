@@ -33,6 +33,7 @@ scalacOptions ++= {
     )
   } else {
     unusedWarnings.value ++ Seq(
+      "-Xsource:3",
       "-Xlint"
     )
   }
