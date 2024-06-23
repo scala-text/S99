@@ -11,7 +11,7 @@ scalaVersion := Scala212
 crossScalaVersions := Seq(Scala212, "2.13.14", "3.4.2")
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest-funspec" % "3.2.18" % "test",
+  "org.scalatest" %% "scalatest-funspec" % "3.2.19" % "test",
   "org.scalacheck" %% "scalacheck" % "1.18.0" % "test"
 )
 
