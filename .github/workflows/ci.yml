@@ -12,8 +12,7 @@ jobs:
       matrix:
         include:
           - java: 8
-          - java: 11
-          - java: 17
+          - java: 21
     steps:
     - uses: actions/setup-java@6a0805fcefea3d4657a47ac4c165951e33482018 # v4.2.2
       with:
