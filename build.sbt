@@ -1,6 +1,6 @@
 name := "S99"
 
-def Scala212 = "2.12.19"
+def Scala212 = "2.12.20"
 
 val isScala3 = Def.setting(
   CrossVersion.partialVersion(scalaVersion.value).exists(_._1 == 3)
