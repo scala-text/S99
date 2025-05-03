@@ -2,10 +2,6 @@ name := "S99"
 
 def Scala212 = "2.12.20"
 
-val isScala3 = Def.setting(
-  CrossVersion.partialVersion(scalaVersion.value).exists(_._1 == 3)
-)
-
 scalaVersion := Scala212
 
 crossScalaVersions := Seq(Scala212, "2.13.16", "3.6.4")
@@ -28,14 +24,19 @@ scalacOptions ++= Seq(
 )
 
 scalacOptions ++= {
-  if (isScala3.value) {
-    Seq(
-    )
-  } else {
-    unusedWarnings.value ++ Seq(
-      "-Xsource:3",
-      "-Xlint"
-    )
+  scalaBinaryVersion.value match {
+    case "2.12" =>
+      unusedWarnings.value ++ Seq(
+        "-Xsource:3",
+        "-Xlint"
+      )
+    case "2.13" =>
+      unusedWarnings.value ++ Seq(
+        "-Xsource:3-cross",
+        "-Xlint"
+      )
+    case _ =>
+      Nil
   }
 }
 
