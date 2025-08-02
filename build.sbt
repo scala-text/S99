@@ -4,7 +4,7 @@ def Scala212 = "2.12.20"
 
 scalaVersion := Scala212
 
-crossScalaVersions := Seq(Scala212, "2.13.16", "3.7.1")
+crossScalaVersions := Seq(Scala212, "2.13.16", "3.7.2")
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest-funspec" % "3.2.19" % "test",
