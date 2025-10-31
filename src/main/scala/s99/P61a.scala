@@ -9,7 +9,7 @@ object P61a {
       @tailrec
       def loop(queries: List[Tree[T]], acc: List[T]): List[T] =
         queries match {
-          case Nil => acc
+          case Nil          => acc
           case head :: tail =>
             head match {
               case End                  => loop(tail, acc)
