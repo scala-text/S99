@@ -5,7 +5,7 @@ object P02 {
     list match {
       case x :: _ :: Nil => x
       case _ :: y :: xs  => penultimate(y :: xs)
-      case _ =>
+      case _             =>
         sys.error("penultimate is not defined for one or less elements list")
     }
 }

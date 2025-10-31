@@ -8,8 +8,8 @@ import P04.length
 object P26 {
   def groupInto[T](n: Int, k: Int, list: List[T]): List[(List[T], List[T])] =
     list match {
-      case _ if k == n => List((list, Nil))
-      case _ if k == 0 => List((Nil, list))
+      case _ if k == n      => List((list, Nil))
+      case _ if k == 0      => List((Nil, list))
       case x :: xs if k > 0 =>
         append(
           map(groupInto(n - 1, k - 1, xs)) { a => (x :: a._1, a._2) },

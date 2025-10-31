@@ -5,9 +5,9 @@ object P56 {
   implicit class RichTree[T](val tree: Tree[T]) extends AnyVal {
     def isMirrorOf(another: Tree[T]): Boolean =
       (tree, another) match {
-        case (End, End) => true
-        case (End, _)   => false
-        case (_, End)   => false
+        case (End, End)                         => true
+        case (End, _)                           => false
+        case (_, End)                           => false
         case (Node(_, l1, r1), Node(_, l2, r2)) =>
           l1.isMirrorOf(r2) && r1.isMirrorOf(l2)
       }

@@ -12,7 +12,7 @@ class P57Check extends Properties("P57") {
   property("Tree.fromList") = {
     def isBinarySearchTree(node: Node[Int]): Option[(Min, Max)] =
       node match {
-        case Node(v, End, End) => Some((v, v))
+        case Node(v, End, End)               => Some((v, v))
         case Node(v, End, r @ Node(_, _, _)) =>
           isBinarySearchTree(r)
           for (
@@ -35,7 +35,7 @@ class P57Check extends Properties("P57") {
       }
     Prop.forAll { (s: List[Int]) =>
       Tree.fromList(s) match {
-        case End => true
+        case End                  => true
         case node @ Node(_, _, _) =>
           isBinarySearchTree(node).isDefined
       }

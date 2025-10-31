@@ -14,7 +14,7 @@ object P27b {
         list: List[T]
     ): List[List[List[T]]] = {
       setting match {
-        case Nil => List(Nil)
+        case Nil     => List(Nil)
         case x :: xs =>
           flatMap(groupInto(n, x, list)) { case (s, r) =>
             map(group_(xs, n - x, r))(k => k.::(s))

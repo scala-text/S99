@@ -31,10 +31,10 @@ object P67 {
     def ~[U](that: => Parser[U]): Parser[(T, U)] =
       new Parser(input =>
         this.apply(input) match {
-          case f @ Failure(_) => f
+          case f @ Failure(_)        => f
           case Success(result, rest) =>
             that(rest) match {
-              case f @ Failure(_) => f
+              case f @ Failure(_)          => f
               case Success(result2, rest2) =>
                 Success(result -> result2, rest2)
             }
@@ -88,7 +88,7 @@ object P67 {
     letter ~ (char('(') ~ node.? ~ char(',') ~ node.? ~ char(
       ')'
     )).? ^^ {
-      case c ~ None => Node(c, End, End)
+      case c ~ None                                       => Node(c, End, End)
       case c ~ Some(_ ~ leftOption ~ _ ~ rightOption ~ _) =>
         Node(c, leftOption.getOrElse(End), rightOption.getOrElse(End))
     }

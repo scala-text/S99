@@ -8,7 +8,7 @@ class P08Check extends Properties("P08") {
     @scala.annotation.tailrec
     def loop(list: List[Int], curr: Int, count: Int): Int =
       list match {
-        case Nil => count
+        case Nil     => count
         case x :: xs =>
           if (curr == x) loop(xs, curr, count + 1) else loop(xs, x, count)
       }
