@@ -1,6 +1,6 @@
 name := "S99"
 
-def Scala212 = "2.12.20"
+def Scala212 = "2.12.21"
 
 scalaVersion := Scala212
 
