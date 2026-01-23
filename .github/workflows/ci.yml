@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - java: 8
+          - java: 17
           - java: 21
     steps:
     - uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e # v5.1.0
