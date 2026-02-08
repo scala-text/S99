@@ -19,7 +19,6 @@ scalacOptions ++= Seq(
   "-deprecation",
   "-unchecked",
   "-language:existentials",
-  "-language:higherKinds",
   "-language:implicitConversions"
 )
 
@@ -27,6 +26,7 @@ scalacOptions ++= {
   scalaBinaryVersion.value match {
     case "2.12" =>
       unusedWarnings.value ++ Seq(
+        "-language:higherKinds",
         "-Xsource:3",
         "-Xlint"
       )
