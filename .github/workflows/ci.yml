@@ -21,5 +21,5 @@ jobs:
         distribution: temurin
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
     - uses: sbt/setup-sbt@v1
-    - uses: coursier/cache-action@95e5b1029b6b86e7bac033ee44a0697d8a527d2d # v8.1.1
+    - uses: coursier/cache-action@057d08c2f9a2c4e7a4d33df3aae657b7db88b8cc # v8.2.0
     - run: sbt -v "+ scalafmtCheckAll ; scalafmtSbtCheck ; + test"
